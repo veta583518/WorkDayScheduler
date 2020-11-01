@@ -5,3 +5,9 @@ Create a simple calendar application that allows a user to save events for each 
 
 
 ![mock-up]
+
+Link to deployed site 
+[WorkDayScheduler](https://veta583518.github.io/WorkDayScheduler/)
+
+Link to github repository:
+[GitHub](https://github.com/veta583518/WorkDayScheduler)
