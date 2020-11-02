@@ -42,7 +42,6 @@ auditTime();
 // set interval to update every 3-5 min (run audit time at the end)
 // setInterval(function(){
 
-// })
     
 // save task from planner to local storage
 var saveTask = function() {
