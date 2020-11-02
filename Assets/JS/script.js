@@ -19,7 +19,8 @@ loadTasks();
 $(document).ready(function() {
     $("#currentDay").text(moment().format('dddd, MMMM Do hh:mm:ss a'));
     loadTasks();
-})
+    auditTime();
+});
 
 // audit time blocks to code appropriately as past present, future
 var auditTime = function(tasks) { 
@@ -33,7 +34,7 @@ var auditTime = function(tasks) {
         } else if (taskHour < currentHour) {
             $(this).addClass("past");
         } else {
-            $(this).addClass("past");
+            $(this).addClass("future");
         } 
     })
 };
@@ -41,12 +42,16 @@ auditTime();
     
 // set interval to update every 3-5 min (run audit time at the end)
 // setInterval(function(){
-
+setInterval(function() {
+    $(".container .time-block").each(function(index, el){ 
+        auditTime(el);
+    });
+}, 180000);
     
 // save task from planner to local storage
 var saveTask = function() {
     localStorage.setItem(taskTime, taskText, JSON.stringify(tasks));
-}
+};
 
 // save tasks on click
 $(".saveBtn").click(function() {
